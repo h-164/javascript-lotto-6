@@ -28,6 +28,11 @@ const OutputView = {
     this.progress(up, down);
   },
 
+  over(up, down) {
+    MissionUtils.Console.print("게임 성공 여부: 실패");
+    this.progress(up, down);
+  },
+
   count(count) {
     MissionUtils.Console.print("총 시도한 횟수: " + count);
   },

@@ -1,5 +1,6 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
 import OutputView from "./OutputView.js";
+import { WIN, LOSE, RE } from "./Constants.js";
 import App from "./App.js";
 
 class Bridge {
@@ -51,7 +52,15 @@ class Bridge {
     }
 
     OutputView.progress(this.#up, this.#down);
-    return false;
+    return this.#gameOver();
+  }
+
+  #gameOver() {
+    OutputView.over(this.#up, this.#down);
+    this.#up = "[";
+    this.#down = "[";
+    this.#position = 0;
+    return LOSE;
   }
 
   #move() {
@@ -72,12 +81,12 @@ class Bridge {
 
   #continue() {
     if (this.#position !== this.#length) {
-      return true;
+      return RE;
     }
 
     if (this.#position === this.#length) {
-      return OutputView.win(this.#up, this.#down);
-      return false;
+      OutputView.win(this.#up, this.#down);
+      return WIN;
     }
   }
 
