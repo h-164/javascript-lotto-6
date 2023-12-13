@@ -14,6 +14,18 @@ const InputHandler = {
       return this.bridgeLength();
     }
   },
+
+  async moveBridge() {
+    const MOVE = await InputView.moveBridge();
+
+    try {
+      Validator.moveBridge(MOVE);
+      return MOVE;
+    } catch (error) {
+      OutputView.moveError();
+      return this.moveBridge();
+    }
+  },
 };
 
 export default InputHandler;

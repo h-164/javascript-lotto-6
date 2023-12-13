@@ -1,4 +1,4 @@
-import { LENGTH_RANGE_ERROR } from "./Constants.js";
+import { LENGTH_RANGE_ERROR, MOVE_BRIDGE_ERROR } from "./Constants.js";
 
 const Validator = {
   bridgeLength(input) {
@@ -8,6 +8,12 @@ const Validator = {
 
     if (input !== parseInt(input)) {
       throw new Error(LENGTH_RANGE_ERROR);
+    }
+  },
+
+  moveBridge(input) {
+    if (input !== "D" && input !== "U") {
+      throw new Error(MOVE_BRIDGE_ERROR);
     }
   },
 };

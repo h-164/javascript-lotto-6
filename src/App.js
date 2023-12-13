@@ -10,6 +10,7 @@ class App {
     OutputView.gameStart();
     const LENGTH = await InputHandler.bridgeLength();
     const bridge = new Bridge(LENGTH);
+    const MOVE = await InputHandler.moveBridge();
   }
 }
 
