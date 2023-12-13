@@ -17,6 +17,8 @@ class App {
     if (bridge.check(MOVE)) {
       return this.moveBridge(bridge);
     }
+
+    OutputView.count(this.#gameCount);
   }
 
   async play() {

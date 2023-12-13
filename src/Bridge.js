@@ -51,7 +51,7 @@ class Bridge {
     }
 
     OutputView.progress(this.#up, this.#down);
-    // return this.#over();
+    return false;
   }
 
   #move() {
@@ -73,6 +73,11 @@ class Bridge {
   #continue() {
     if (this.#position !== this.#length) {
       return true;
+    }
+
+    if (this.#position === this.#length) {
+      return OutputView.win(this.#up, this.#down);
+      return false;
     }
   }
 

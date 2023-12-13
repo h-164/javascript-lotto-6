@@ -22,6 +22,15 @@ const OutputView = {
     MissionUtils.Console.print(up + "]");
     MissionUtils.Console.print(down + "]");
   },
+
+  win(up, down) {
+    MissionUtils.Console.print("게임 성공 여부: 성공");
+    this.progress(up, down);
+  },
+
+  count(count) {
+    MissionUtils.Console.print("총 시도한 횟수: " + count);
+  },
 };
 
 export default OutputView;
