@@ -10,7 +10,7 @@ const InputHandler = {
       Validator.bridgeLength(LENGTH);
       return LENGTH;
     } catch (error) {
-      OutputView.error();
+      OutputView.lengthError();
       return this.bridgeLength();
     }
   },

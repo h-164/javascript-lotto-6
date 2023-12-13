@@ -17,6 +17,11 @@ const OutputView = {
   moveError() {
     MissionUtils.Console.print(MOVE_BRIDGE_ERROR);
   },
+
+  progress(up, down) {
+    MissionUtils.Console.print(up + "]");
+    MissionUtils.Console.print(down + "]");
+  },
 };
 
 export default OutputView;
