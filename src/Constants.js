@@ -12,3 +12,4 @@ export const RE = "re";
 export const LENGTH_RANGE_ERROR =
   "[ERROR] 다리 길이는 3부터 20 사이의 정수여야 합니다.";
 export const MOVE_BRIDGE_ERROR = "[ERROR] U 혹은 D를 입력해주세요.";
+export const RE_GAME_ERROR = "R 또는 Q를 입력해주세요.";

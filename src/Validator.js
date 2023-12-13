@@ -1,4 +1,8 @@
-import { LENGTH_RANGE_ERROR, MOVE_BRIDGE_ERROR } from "./Constants.js";
+import {
+  LENGTH_RANGE_ERROR,
+  MOVE_BRIDGE_ERROR,
+  RE_GAME_ERROR,
+} from "./Constants.js";
 
 const Validator = {
   bridgeLength(input) {
@@ -14,6 +18,12 @@ const Validator = {
   moveBridge(input) {
     if (input !== "D" && input !== "U") {
       throw new Error(MOVE_BRIDGE_ERROR);
+    }
+  },
+
+  reGame(input) {
+    if (input !== "Q" && input !== "R") {
+      throw new Error(RE_GAME_ERROR);
     }
   },
 };

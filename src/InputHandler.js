@@ -26,6 +26,18 @@ const InputHandler = {
       return this.moveBridge();
     }
   },
+
+  async reGame() {
+    const RE_GAME = await InputView.reGame();
+
+    try {
+      Validator.reGame(RE_GAME);
+      return RE_GAME;
+    } catch (error) {
+      OutputView.reGameError();
+      return this.reGame();
+    }
+  },
 };
 
 export default InputHandler;

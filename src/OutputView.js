@@ -3,6 +3,7 @@ import {
   GAME_START,
   LENGTH_RANGE_ERROR,
   MOVE_BRIDGE_ERROR,
+  RE_GAME_ERROR,
 } from "./Constants.js";
 
 const OutputView = {
@@ -35,6 +36,10 @@ const OutputView = {
 
   count(count) {
     MissionUtils.Console.print("총 시도한 횟수: " + count);
+  },
+
+  reGameError() {
+    MissionUtils.Console.print(RE_GAME_ERROR);
   },
 };
 

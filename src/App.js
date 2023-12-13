@@ -32,7 +32,8 @@ class App {
   }
 
   async reGame(bridge) {
-    const RE_GAME = await InputView.reGame();
+    const RE_GAME = await InputHandler.reGame();
+
     if (RE_GAME === "R") {
       this.#gameCount++;
       this.moveBridge(bridge);
