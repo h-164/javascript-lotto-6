@@ -25,13 +25,15 @@ const OutputView = {
   },
 
   win(up, down) {
-    MissionUtils.Console.print("게임 성공 여부: 성공");
+    MissionUtils.Console.print("\n" + "최종 게임 결과");
     this.progress(up, down);
+    MissionUtils.Console.print("\n" + "게임 성공 여부: 성공");
   },
 
   over(up, down) {
-    MissionUtils.Console.print("게임 성공 여부: 실패");
+    MissionUtils.Console.print("\n" + "최종 게임 결과");
     this.progress(up, down);
+    MissionUtils.Console.print("\n" + "게임 성공 여부: 실패");
   },
 
   count(count) {

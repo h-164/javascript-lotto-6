@@ -3,15 +3,15 @@ import { INPUT_BRIDGE_LENGTH, MOVE_BRIDGE, RE_GAME } from "./Constants.js";
 
 const InputView = {
   bridgeLength() {
-    return MissionUtils.Console.readLineAsync(INPUT_BRIDGE_LENGTH);
+    return MissionUtils.Console.readLineAsync("\n" + INPUT_BRIDGE_LENGTH);
   },
 
   moveBridge() {
-    return MissionUtils.Console.readLineAsync(MOVE_BRIDGE);
+    return MissionUtils.Console.readLineAsync("\n" + MOVE_BRIDGE);
   },
 
   reGame() {
-    return MissionUtils.Console.readLineAsync(RE_GAME);
+    return MissionUtils.Console.readLineAsync("\n" + RE_GAME);
   },
 };
 

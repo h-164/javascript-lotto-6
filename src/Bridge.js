@@ -15,7 +15,6 @@ class Bridge {
     this.#bridge = this.#crossable();
     this.#up = "[";
     this.#down = "[";
-    console.log(this.#bridge);
   }
 
   #crossable() {
@@ -88,10 +87,6 @@ class Bridge {
       OutputView.win(this.#up, this.#down);
       return WIN;
     }
-  }
-
-  #test() {
-    MissionUtils.Console.print(this.#length);
   }
 }
 
