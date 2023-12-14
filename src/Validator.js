@@ -2,6 +2,10 @@ import {
   LENGTH_RANGE_ERROR,
   MOVE_BRIDGE_ERROR,
   RE_GAME_ERROR,
+  UP,
+  DOWN,
+  QUIT,
+  RE_START,
 } from "./Constants.js";
 
 const Validator = {
@@ -16,13 +20,13 @@ const Validator = {
   },
 
   moveBridge(input) {
-    if (input !== "D" && input !== "U") {
+    if (input !== DOWN && input !== UP) {
       throw new Error(MOVE_BRIDGE_ERROR);
     }
   },
 
   reGame(input) {
-    if (input !== "Q" && input !== "R") {
+    if (input !== QUIT && input !== RE_START) {
       throw new Error(RE_GAME_ERROR);
     }
   },

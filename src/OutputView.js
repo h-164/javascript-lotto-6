@@ -1,9 +1,14 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
 import {
+  CLOSE,
+  GAME_RESULT,
   GAME_START,
   LENGTH_RANGE_ERROR,
+  LOSE_MESSAGE,
   MOVE_BRIDGE_ERROR,
   RE_GAME_ERROR,
+  TOTAL_COUNT,
+  WIN_MESSAGE,
 } from "./Constants.js";
 
 const OutputView = {
@@ -20,24 +25,24 @@ const OutputView = {
   },
 
   progress(up, down) {
-    MissionUtils.Console.print(up + "]");
-    MissionUtils.Console.print(down + "]");
+    MissionUtils.Console.print(up + CLOSE);
+    MissionUtils.Console.print(down + CLOSE);
   },
 
   win(up, down) {
-    MissionUtils.Console.print("\n" + "최종 게임 결과");
+    MissionUtils.Console.print("\n" + GAME_RESULT);
     this.progress(up, down);
-    MissionUtils.Console.print("\n" + "게임 성공 여부: 성공");
+    MissionUtils.Console.print("\n" + WIN_MESSAGE);
   },
 
   over(up, down) {
-    MissionUtils.Console.print("\n" + "최종 게임 결과");
+    MissionUtils.Console.print("\n" + GAME_RESULT);
     this.progress(up, down);
-    MissionUtils.Console.print("\n" + "게임 성공 여부: 실패");
+    MissionUtils.Console.print("\n" + LOSE_MESSAGE);
   },
 
   count(count) {
-    MissionUtils.Console.print("총 시도한 횟수: " + count);
+    MissionUtils.Console.print(TOTAL_COUNT + count);
   },
 
   reGameError() {

@@ -1,6 +1,17 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
 import OutputView from "./OutputView.js";
-import { WIN, LOSE, RE } from "./Constants.js";
+import {
+  WIN,
+  LOSE,
+  RE,
+  UP,
+  OPEN,
+  CORRECT,
+  BLANK,
+  WALL,
+  DOWN,
+  WRONG,
+} from "./Constants.js";
 
 class Bridge {
   #length;
@@ -13,8 +24,8 @@ class Bridge {
     this.#position = 0;
     this.#length = input;
     this.#bridge = this.#crossable();
-    this.#up = "[";
-    this.#down = "[";
+    this.#up = OPEN;
+    this.#down = OPEN;
   }
 
   #crossable() {
@@ -27,11 +38,11 @@ class Bridge {
   }
 
   check(input) {
-    if (this.#bridge[this.#position] === 1 && input === "U") {
+    if (this.#bridge[this.#position] === 1 && input === UP) {
       return this.#move();
     }
 
-    if (this.#bridge[this.#position] === 0 && input === "D") {
+    if (this.#bridge[this.#position] === 0 && input === DOWN) {
       return this.#move();
     }
 
@@ -40,13 +51,13 @@ class Bridge {
 
   #stop() {
     if (this.#bridge[this.#position] === 0) {
-      this.#up += " X ";
-      this.#down += "   ";
+      this.#up += WRONG;
+      this.#down += BLANK;
     }
 
     if (this.#bridge[this.#position] === 1) {
-      this.#up += "   ";
-      this.#down += " X ";
+      this.#up += BLANK;
+      this.#down += WRONG;
     }
 
     OutputView.progress(this.#up, this.#down);
@@ -55,20 +66,20 @@ class Bridge {
 
   #gameOver() {
     OutputView.over(this.#up, this.#down);
-    this.#up = "[";
-    this.#down = "[";
+    this.#up = OPEN;
+    this.#down = OPEN;
     this.#position = 0;
     return LOSE;
   }
 
   #move() {
     if (this.#bridge[this.#position] === 1) {
-      this.#up += " O ";
-      this.#down += "   ";
+      this.#up += CORRECT;
+      this.#down += BLANK;
     }
     if (this.#bridge[this.#position] === 0) {
-      this.#up += "   ";
-      this.#down += " O ";
+      this.#up += BLANK;
+      this.#down += CORRECT;
     }
 
     OutputView.progress(this.#up, this.#down);
@@ -78,8 +89,8 @@ class Bridge {
 
   #continue() {
     if (this.#position !== this.#length) {
-      this.#up += "|";
-      this.#down += "|";
+      this.#up += WALL;
+      this.#down += WALL;
       return RE;
     }
 

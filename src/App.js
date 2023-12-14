@@ -4,7 +4,7 @@ import Validator from "./Validator.js";
 import InputHandler from "./InputHandler.js";
 import { MissionUtils } from "@woowacourse/mission-utils";
 import Bridge from "./Bridge.js";
-import { WIN, LOSE, RE } from "./Constants.js";
+import { WIN, LOSE, RE, RE_START } from "./Constants.js";
 
 class App {
   #gameCount;
@@ -34,7 +34,7 @@ class App {
   async reGame(bridge) {
     const RE_GAME = await InputHandler.reGame();
 
-    if (RE_GAME === "R") {
+    if (RE_GAME === RE_START) {
       this.#gameCount++;
       this.moveBridge(bridge);
     }
