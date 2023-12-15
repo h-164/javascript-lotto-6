@@ -56,7 +56,8 @@ export const PANINI = "파니니";
 
 //input,output
 export const START_MESSAGE = "점심 메뉴 추천을 시작합니다.";
-export const INPUT_NAME_MESSAGE = "코치의 이름을 입력해 주세요. (, 로 구분)";
+export const INPUT_NAME_MESSAGE = "\n코치의 이름을 입력해 주세요. (, 로 구분)";
+export const INPUT_HATE_MESSAGE = "토미(이)가 못 먹는 메뉴를 입력해 주세요.";
 
 //에러메시지
 export const COACH_NAME_ERROR = "[ERROR] 코치 이름은 2~4글자여야 합니다.";

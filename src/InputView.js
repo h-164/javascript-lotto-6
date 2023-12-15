@@ -1,6 +1,6 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
 import Validator from "./Validator.js";
-import { INPUT_NAME_MESSAGE } from "./Constants.js";
+import { INPUT_NAME_MESSAGE, INPUT_HATE_MESSAGE } from "./Constants.js";
 
 const InputView = {
   async coachName() {
@@ -14,6 +14,12 @@ const InputView = {
     } catch (error) {
       return this.coachName();
     }
+  },
+
+  async hateMenu() {
+    let hateMenus = await MissionUtils.Console.readLineAsync(
+      INPUT_HATE_MESSAGE
+    );
   },
 };
 
