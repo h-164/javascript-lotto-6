@@ -43,8 +43,10 @@ const Validator = {
         !KOREA.includes(name) &&
         !CHINA.includes(name) &&
         !ASIA.includes(name) &&
-        !WESTERN.includes(name)
+        !WESTERN.includes(name) &&
+        ""
       ) {
+        OutputView.hateNameError();
         throw new Error(HATE_NAME_ERROR);
       }
     });

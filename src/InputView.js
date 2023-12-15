@@ -24,9 +24,15 @@ const InputView = {
     );
     const HATE_MENUS = hateMenus.split(",");
 
-    Validator.hateName(HATE_MENUS);
-    Validator.hateNumber(HATE_MENUS);
-    Validator.hateSame(HATE_MENUS);
+    try {
+      Validator.hateName(HATE_MENUS);
+      Validator.hateNumber(HATE_MENUS);
+      Validator.hateSame(HATE_MENUS);
+    } catch (error) {
+      return this.hateMenu(name);
+    }
+
+    return HATE_MENUS;
   },
 };
 

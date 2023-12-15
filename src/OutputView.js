@@ -33,6 +33,10 @@ const OutputView = {
   hateSameError() {
     MissionUtils.Console.print(HATE_SAME_ERROR);
   },
+
+  hateNameError() {
+    MissionUtils.Console.print(HATE_NAME_ERROR);
+  },
 };
 
 export default OutputView;

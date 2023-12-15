@@ -8,8 +8,8 @@ class App {
     const NAMES = await InputView.coachName();
 
     for (let i = 0; i < NAMES.length; i++) {
-      new Coach(NAMES[i]);
-      await InputView.hateMenu(NAMES[i]);
+      const coach = new Coach(NAMES[i]);
+      coach.hate(await InputView.hateMenu(NAMES[i]));
     }
   }
 }
