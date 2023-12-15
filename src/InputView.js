@@ -5,20 +5,22 @@ import { INPUT_NAME_MESSAGE, INPUT_HATE_MESSAGE } from "./Constants.js";
 const InputView = {
   async coachName() {
     let names = await MissionUtils.Console.readLineAsync(INPUT_NAME_MESSAGE);
-    const NAMEMS = names.split(",");
+    const NAMES = names.split(",");
 
     try {
-      Validator.coachName(NAMEMS);
-      Validator.coachNumber(NAMEMS);
-      Validator.coachSame(NAMEMS);
+      Validator.coachName(NAMES);
+      Validator.coachNumber(NAMES);
+      Validator.coachSame(NAMES);
     } catch (error) {
       return this.coachName();
     }
+
+    return NAMES;
   },
 
-  async hateMenu() {
+  async hateMenu(name) {
     let hateMenus = await MissionUtils.Console.readLineAsync(
-      INPUT_HATE_MESSAGE
+      "\n" + name + INPUT_HATE_MESSAGE
     );
   },
 };
