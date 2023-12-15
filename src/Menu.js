@@ -1,9 +1,3 @@
-export const JAPAN = "일식";
-export const KOREAN = "한식";
-export const CHINA = "중식";
-export const ASIA = "아시안";
-export const WESTERN = "양식";
-
 export const KYUDONG = "규동";
 export const UDONG = "우동";
 export const MISOSIRU = "미소시루";
@@ -54,7 +48,7 @@ export const SPAGHETTI = "스파게티";
 export const PIZZA = "피자";
 export const PANINI = "파니니";
 
-JAPAN = [
+export const JAPAN = [
   KYUDONG,
   UDONG,
   MISOSIRU,
@@ -66,7 +60,7 @@ JAPAN = [
   OKONOMIYAKI,
 ];
 
-KOREA = [
+export const KOREA = [
   GIMBAP,
   KIMCHI_JJIGAE,
   SSAM_BAP,
@@ -78,7 +72,7 @@ KOREA = [
   JAEYUK_BOKKEUM,
 ];
 
-CHINA = [
+export const CHINA = [
   KAN_POONG_GI,
   BOKKEUM_MYUN,
   DONGPA_YOOK,
@@ -90,7 +84,7 @@ CHINA = [
   GOCHU_JAPCHAE,
 ];
 
-ASIA = [
+export const ASIA = [
   PAD_THAI,
   KHAO_PAD,
   NASI_GORENG,
@@ -102,7 +96,7 @@ ASIA = [
   BUN_CHA,
 ];
 
-WESTERN = [
+export const WESTERN = [
   LASAGNA,
   GRATIN,
   NYOKKI,
@@ -113,3 +107,9 @@ WESTERN = [
   PIZZA,
   PANINI,
 ];
+
+// export const JAPAN = "일식";
+// export const KOREA = "한식";
+// export const CHINA = "중식";
+// export const ASIA = "아시안";
+// export const WESTERN = "양식";
