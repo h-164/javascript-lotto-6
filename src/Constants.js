@@ -59,5 +59,6 @@ export const START_MESSAGE = "점심 메뉴 추천을 시작합니다.";
 export const INPUT_NAME_MESSAGE = "코치의 이름을 입력해 주세요. (, 로 구분)";
 
 //에러메시지
-export const COACH_NAME_ERROR = "코치 이름은 2~4글자여야 합니다.";
-export const COACH_NUMBER_ERROR = "코치는 2명~5명이어야 합니다.";
+export const COACH_NAME_ERROR = "[ERROR] 코치 이름은 2~4글자여야 합니다.";
+export const COACH_NUMBER_ERROR = "[ERROR] 코치는 2명~5명이어야 합니다.";
+export const COACH_SAME_ERROR = "[ERROR] 코치 이름에 중복이 있습니다.";

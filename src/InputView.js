@@ -7,7 +7,13 @@ const InputView = {
     let names = await MissionUtils.Console.readLineAsync(INPUT_NAME_MESSAGE);
     const NAMEMS = names.split(",");
 
-    Validator.coachName(NAMEMS);
+    try {
+      Validator.coachName(NAMEMS);
+      Validator.coachNumber(NAMEMS);
+      Validator.coachSame(NAMEMS);
+    } catch (error) {
+      return this.coachName();
+    }
   },
 };
 
